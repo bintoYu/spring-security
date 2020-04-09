@@ -20,6 +20,7 @@ import org.springframework.util.DigestUtils;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
     @Autowired
     private MyUserDetailsService userDetailsService;
 
