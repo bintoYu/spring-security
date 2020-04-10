@@ -1,6 +1,5 @@
 package com.binto.springboot.security.config;
 
-import com.binto.springboot.security.jwt.JwtAuthenticationTokenFilter;
 import com.binto.springboot.security.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

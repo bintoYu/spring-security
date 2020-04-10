@@ -5,10 +5,11 @@ DROP TABLE IF EXISTS `role_permission`;
 DROP TABLE IF EXISTS `permission`;
 
 CREATE TABLE `user` (
-`id` bigint(11) NOT NULL AUTO_INCREMENT,
-`username` varchar(255) NOT NULL,
-`password` varchar(255) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `last_password_reset_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 );
 CREATE TABLE `role` (
 `id` bigint(11) NOT NULL AUTO_INCREMENT,
@@ -32,8 +33,8 @@ CREATE TABLE `permission` (
 PRIMARY KEY (`id`)
 );
 
-INSERT INTO user (id, username, password) VALUES (1,'user','e10adc3949ba59abbe56e057f20f883e');
-INSERT INTO user (id, username , password) VALUES (2,'admin','e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO `user` VALUES ('1', 'user', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-09 10:47:53');
+INSERT INTO `user` VALUES ('2', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-09 10:47:58');
 INSERT INTO role (id, name) VALUES (1,'USER');
 INSERT INTO role (id, name) VALUES (2,'ADMIN');
 INSERT INTO permission (id, url, name, pid) VALUES (1,'/user/common','common',0);
