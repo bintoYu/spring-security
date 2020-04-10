@@ -1,10 +1,13 @@
 package com.binto.springboot.security.model;
 
+import lombok.Data;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
+@Data
 public class User implements UserDetails, Serializable {
 
     private Long id;
@@ -13,40 +16,7 @@ public class User implements UserDetails, Serializable {
 
     private List<Role> authorities;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    @Override
-    public List<Role> getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(List<Role> authorities) {
-        this.authorities = authorities;
-    }
+    private Date lastPasswordResetDate;
 
     /**
      * 用户账号是否过期
